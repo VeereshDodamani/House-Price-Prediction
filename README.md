@@ -4,28 +4,22 @@ The project is focused on building an end-to-end machine learning pipeline for a
 The pipeline is developed using ZenML, a MLOps framework that helps in managing machine learning workflows, and MLflow, which is used for experiment tracking and model deployment.
 The primary goal is to predict house prices based on various features of the properties, such as the size, location, and condition.
 
-But everyone is doing house price prediction system, HOW it will differentiate ME?
+But everyone is doing house price prediction system, **HOW it will differentiate ME?**
 
-What Most People Do?
+**What Most People Do?**
 1. Limited Exploration:
-   
     a. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
-   
     b. They quickly move on to calling. Fit on a model without thoroughly understanding the data.
 2. Basic Model Training:
-   
     a. After EDA, they typically split the data, train a model, and call predict.
-    
-    b. The project often ends here with a focus on achieving high accuracy or minimizing error.
+    b. The project often ends here with a focus on achieving high accuracy or minimizing error "\n"
 3. Lack of Iteration:
-   
     a. Once the model is trained, it's rarely revisited or improved based on deeper insights from the data.
-   
     b. There's minimal to no effort in validating assumptions or handling model violations.
 
-Our Comprehensive Approach
+**Our Comprehensive Approach**
 
-1.Thorough Data Research
+1.Thorough Data Research:
     a. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
     b. They quickly move on to calling fit on a model without thoroughly understanding the data.
 2. Structured Data Processing:
