@@ -41,7 +41,11 @@ I will ingest data first; here's how I will do it little differently:
 I will make use of Factory Design Pattern.
 
 **Factory Design Pattern**
+
 Imagine I run a coffee shop. Customers can order different types of coffee, but the process of making coffee follows a similar pattern. I have a general coffee-making machine (the factory) that can be used to make different types of coffee (products) like Espresso, Latte, or Cappuccino.
-    CoffeeMachine (Factory): Has a method to make coffee.
-Espresso, Latte, Cappuccino (ConcreteProducts): Different types of coffee that can be made by the machine.
-Example code in python - factory-design-patter.py
+
+CoffeeMachine (Factory): Has a method to make coffee.
+
+Espresso, Latte, Cappuccino (ConcreteProducts): Different types of coffee that can be made by the same machine.
+
+Example code in python - factory_design_patter.py
