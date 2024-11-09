@@ -18,6 +18,7 @@ What Most People Do?
     b. There's minimal to no effort in validating assumptions or handling model violations.
 
 Our Comprehensive Approach
+
 1.Thorough Data Research
     a. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
     b. They quickly move on to calling fit on a model without thoroughly understanding the data.
@@ -32,4 +33,3 @@ Our Comprehensive Approach
     a. Differentiate our project by integrating MLOps practices using ZenML and MLflow.
     b. Implement CI/CD pipelines to automate testing, deployment, of the model in production.
     c. Ensure the model is not only accurate but also maintainable, scalable, and ready for real-world use.
-    
