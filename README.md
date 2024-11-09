@@ -8,28 +8,28 @@ But everyone is doing house price prediction system, **HOW it will differentiate
 
 **What Most People Do?**
 1. Limited Exploration:
-    a. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
-    b. They quickly move on to calling. Fit on a model without thoroughly understanding the data.
+    1. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
+    2. They quickly move on to calling. Fit on a model without thoroughly understanding the data.
 2. Basic Model Training:
-    a. After EDA, they typically split the data, train a model, and call predict.
-    b. The project often ends here with a focus on achieving high accuracy or minimizing error.
+    1. After EDA, they typically split the data, train a model, and call predict.
+    2. The project often ends here with a focus on achieving high accuracy or minimizing error.
 3. Lack of Iteration:
-    a. Once the model is trained, it's rarely revisited or improved based on deeper insights from the data.
-    b. There's minimal to no effort in validating assumptions or handling model violations.
+    1. Once the model is trained, it's rarely revisited or improved based on deeper insights from the data.
+    2. There's minimal to no effort in validating assumptions or handling model violations.
 
 **Our Comprehensive Approach**
-1.Thorough Data Research:
 
-    a. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
-    b. They quickly move on to calling fit on a model without thoroughly understanding the data.
+1. Thorough Data Research:
+    1. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
+    2. They quickly move on to calling fit on a model without thoroughly understanding the data.
 2. Structured Data Processing:
-    a. Implement findings from EDA in the preprocessing stage, ensuring the data is clean and feature-engineered to maximize model         
+    1. Implement findings from EDA in the preprocessing stage, ensuring the data is clean and feature-engineered to maximize model         
        performance.
-    b. Continuously validate and correct assumptions during model training, fixing any violations through iterative improvement.
-4. Beyond Core ML:
-    a. We don't just train a model; we ensure it meets all necessary assumptions and refine it iteratively.
-    b. We focus on building a robust pipeline that can be easily reproduced and deployed.
-5. MLOps and Production Readiness:
-    a. Differentiate our project by integrating MLOps practices using ZenML and MLflow.
-    b. Implement CI/CD pipelines to automate testing, deployment, of the model in production.
-    c. Ensure the model is not only accurate but also maintainable, scalable, and ready for real-world use.
+    2. Continuously validate and correct assumptions during model training, fixing any violations through iterative improvement.
+3. Beyond Core ML:
+    1. We don't just train a model; we ensure it meets all necessary assumptions and refine it iteratively.
+    2. We focus on building a robust pipeline that can be easily reproduced and deployed.
+4. MLOps and Production Readiness:
+    1. Differentiate our project by integrating MLOps practices using ZenML and MLflow.
+    2. Implement CI/CD pipelines to automate testing, deployment, of the model in production.
+    3. Ensure the model is not only accurate but also maintainable, scalable, and ready for real-world use.
