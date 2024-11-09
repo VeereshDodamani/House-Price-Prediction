@@ -22,7 +22,8 @@ Our Comprehensive Approach
     a. Most practitioners start with basic exploratory data analysis (EDA) using standard frameworks.
     b. They quickly move on to calling fit on a model without thoroughly understanding the data.
 2. Structured Data Processing:
-    a. Implement findings from EDA in the preprocessing stage, ensuring the data is clean and feature-engineered to maximize model performance.
+    a. Implement findings from EDA in the preprocessing stage, ensuring the data is clean and feature-engineered to maximize model         
+       performance.
     b. Continuously validate and correct assumptions during model training, fixing any violations through iterative improvement.
 3. Beyond Core ML:
     a. We don't just train a model; we ensure it meets all necessary assumptions and refine it iteratively.
