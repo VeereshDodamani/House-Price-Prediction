@@ -1,7 +1,17 @@
 import os
 import zipfile
+from abc import ABC, abstractmethod
 
 import pandas as pd
+
+
+# Define an abstract class for Data Ingestor
+class DataIngestor(ABC):
+    @abstractmethod
+    def ingest(self, file_path: str) -> pd.DataFrame:
+        """Abstract method to ingest data from a given file."""
+        pass
+
 
 # Implement a concrete class for ZIP Ingestion
 class ZipDataIngestor(DataIngestor):
