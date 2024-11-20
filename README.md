@@ -49,3 +49,12 @@ CoffeeMachine (Factory): Has a method to make coffee.
 Espresso, Latte, Cappuccino (ConcreteProducts): Different types of coffee that can be made by the same machine.
 
 Example code in python - factory_design_patter.py
+
+**Strategy Pattern**
+Imagine you're developing an e-commerce application. Customers can choose different payment methods like Credit Card, PayPal, or Bitcoin. Each payment method has a different implementation, but the overall process is the same: the customer pays for the order.
+
+1. PaymentMethod (Strategy): An interface that defines how payments are processed.
+2. CreditCardPayment, PayPalPayment, BitcoinPayment (ConcreteStrategies): Different implementations of payment processing.
+3. ShoppingCart (Context): Uses a payment method to process a customer's payment.
+   
+Example code in python - explanations/strategy-design-pattern.py
