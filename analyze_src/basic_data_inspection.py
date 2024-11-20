@@ -25,3 +25,16 @@ class DataInspectionStrategy(ABC):
 # Concrete Strategy for Data Types Inspection
 
 # This strategy inspects the data types of each column and counts non-null values.
+class DataTypesInspectionStrategy(DataInspectionStrategy):
+    def inspect(self, df: pd.DataFrame):
+        """
+        Inspects and prints the data types and non-null counts of the dataframe columns.
+
+        Parameters:
+        df (pd.DataFrame): The dataframe to be inspected.
+
+        Returns:
+        None: Prints the data types and non-null counts to the console.
+        """
+        print("\nData Types and Non-null Counts:")
+        print(df.info())
