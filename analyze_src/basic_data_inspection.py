@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # Abstract Base Class for Data Inspection Strategies
-
+# --------------------------------------------------
 # This class defines a common interface for data inspection strategies.
 # Subclasses must implement the inspect method.
 class DataInspectionStrategy(ABC):
@@ -20,3 +20,8 @@ class DataInspectionStrategy(ABC):
         None: This method prints the inspection results directly.
         """
         pass
+
+
+# Concrete Strategy for Data Types Inspection
+
+# This strategy inspects the data types of each column and counts non-null values.
