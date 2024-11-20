@@ -5,6 +5,8 @@ import pandas as pd
 
 # Abstract Base Class for Data Inspection Strategies
 
+# This class defines a common interface for data inspection strategies.
+# Subclasses must implement the inspect method.
 class DataInspectionStrategy(ABC):
     @abstractmethod
     def inspect(self, df: pd.DataFrame):
