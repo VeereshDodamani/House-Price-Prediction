@@ -65,9 +65,10 @@ class SimpleMissingValuesAnalysis(MissingValuesAnalysisTemplate):
         None: Prints the missing values count to the console.
         """
         print("\nMissing Values Count by Column:")
-        print(missing_values[missing_values < 0])
+        missing_values = df.isnull().sum()
+        print(missing_values[missing_values > 0])
 
-    def visualize_missing_values():
+    def visualize_missing_values(self, df: pd.DataFrame):
         """
         Creates a heatmap to visualize the missing values in the dataframe.
 
@@ -80,4 +81,5 @@ class SimpleMissingValuesAnalysis(MissingValuesAnalysisTemplate):
         print("\nVisualizing Missing Values...")
         plt.figure(figsize=(12, 8))
         sns.heatmap(df.isnull(), cbar=False, cmap="viridis")
+        plt.title("Missing Values Heatmap")
         plt.show()
