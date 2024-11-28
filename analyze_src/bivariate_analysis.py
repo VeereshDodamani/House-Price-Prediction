@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-
 class BivariateAnalysisStrategy(ABC):
     @abstractmethod
     def analyze(self, df: pd.DataFrame, feature1: str, feature2: str):
@@ -20,9 +19,9 @@ class BivariateAnalysisStrategy(ABC):
         None: This method visualizes the relationship between the two features.
         """
         pass
-        
+
 class NumericalVsNumericalAnalysis(BivariateAnalysisStrategy):
-        def analyze(self, df: pd.DataFrame, feature1: str, feature2: str):
+    def analyze(self, df: pd.DataFrame, feature1: str, feature2: str):
         """
         Plots the relationship between two numerical features using a scatter plot.
 
@@ -34,3 +33,7 @@ class NumericalVsNumericalAnalysis(BivariateAnalysisStrategy):
         Returns:
         None: Displays a scatter plot showing the relationship between the two features.
         """
+        plt.figure(figuresize=(10, 6))
+        sns.scatterplot(x=feature1, y=feature2, data=df)
+        plt.title(f"{feature1} // {feature2}")
+        plt.show()
