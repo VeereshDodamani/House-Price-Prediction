@@ -7,7 +7,7 @@ import seaborn as sns
 
 class BivariateAnalysisStrategy(ABC):
     @abstractmethod
-    def analyze(df: pd.DataFrame, feature1: str, feature2: str):
+    def analyze(self, df: pd.DataFrame, feature1: str, feature2: str):
         """
         Perform bivariate analysis on two features of the dataframe.
 
@@ -20,3 +20,17 @@ class BivariateAnalysisStrategy(ABC):
         None: This method visualizes the relationship between the two features.
         """
         pass
+        
+class NumericalVsNumericalAnalysis(BivariateAnalysisStrategy):
+        def analyze(self, df: pd.DataFrame, feature1: str, feature2: str):
+        """
+        Plots the relationship between two numerical features using a scatter plot.
+
+        Parameters:
+        df (pd.DataFrame): The dataframe containing the data.
+        feature1 (str): The name of the first numerical feature/column to be analyzed.
+        feature2 (str): The name of the second numerical feature/column to be analyzed.
+
+        Returns:
+        None: Displays a scatter plot showing the relationship between the two features.
+        """
