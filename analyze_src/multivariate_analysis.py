@@ -22,3 +22,61 @@ class MultivariateAnalysisTemplate(ABC):
         """
         self.generate_correlation_heatmap(df)
         self.generate_pairplot(df)
+
+    @abstractmethod
+    def generate_correlation_heatmap(self, df: pd.DataFrame):
+        """
+        Generate and display a heatmap of the correlations between features.
+
+        Parameters:
+        df (pd.DataFrame): The dataframe containing the data to be analyzed.
+
+        Returns:
+        None: This method should generate and display a correlation heatmap.
+        """
+        pass
+
+    @abstractmethod
+    def generate_pairplot(self, df: pd.DataFrame):
+        """
+        Generate and display a pair plot of the selected features.
+
+        Parameters:
+        df (pd.DataFrame): The dataframe containing the data to be analyzed.
+
+        Returns:
+        None: This method should generate and display a pair plot.
+        """
+        pass
+
+
+# Concrete Class for Multivariate Analysis with Correlation Heatmap and Pair Plot
+
+# This class implements the methods to generate a correlation heatmap and a pair plot.
+class SimpleMultivariateAnalysis(MultivariateAnalysisTemplate):
+    def generate_correlation_heatmap(self, df: pd.DataFrame):
+        """
+        Generates and displays a correlation heatmap for the numerical features in the dataframe.
+
+        Parameters:
+        df (pd.DataFrame): The dataframe containing the data to be analyzed.
+
+        Returns:
+        None: Displays a heatmap showing correlations between numerical features.
+        """
+        plt.figure(figsize=(10))
+        sns.heatmap(df.corr(), annot=True, fmt=".2f", cmap="coolwarm", linewidths=0.5)
+        plt.show()
+
+    def generate_pairplot(self, df: pd.DataFrame):
+        """
+        Generates and displays a pair plot for the selected features in the dataframe.
+
+        Parameters:
+        df (pd.DataFrame): The dataframe containing the data to be analyzed.
+
+        Returns:
+        None: Displays a pair plot for the selected features.
+        """
+        plt.suptitle("Pair Plot of Selected Features", y=1.02)
+        plt.show()
