@@ -64,8 +64,9 @@ class SimpleMultivariateAnalysis(MultivariateAnalysisTemplate):
         Returns:
         None: Displays a heatmap showing correlations between numerical features.
         """
-        plt.figure(figsize=(10))
+        plt.figure(figsize=(12, 10))
         sns.heatmap(df.corr(), annot=True, fmt=".2f", cmap="coolwarm", linewidths=0.5)
+        plt.title("Correlation Heatmap")
         plt.show()
 
     def generate_pairplot(self, df: pd.DataFrame):
@@ -78,5 +79,6 @@ class SimpleMultivariateAnalysis(MultivariateAnalysisTemplate):
         Returns:
         None: Displays a pair plot for the selected features.
         """
+        sns.pairplot(df)
         plt.suptitle("Pair Plot of Selected Features", y=1.02)
         plt.show()
