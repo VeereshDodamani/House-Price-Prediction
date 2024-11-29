@@ -21,3 +21,4 @@ class MultivariateAnalysisTemplate(ABC):
         None: This method orchestrates the multivariate analysis process.
         """
         self.generate_correlation_heatmap(df)
+        self.generate_pairplot(df)
