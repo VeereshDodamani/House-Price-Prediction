@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 import matplotlib.pyplot as plt
 import pandas as pd
-
+import seaborn as sns
 
 
 # Abstract Base Class for Univariate Analysis Strategy
@@ -41,6 +41,7 @@ class NumericalUnivariateAnalysis(UnivariateAnalysisStrategy):
         None: Displays a histogram with a KDE plot.
         """
         plt.figure(figsize=(10, 6))
+        sns.histplot(df[feature], kde=True, bins=30)
         plt.title(f"Distribution of {feature}")
         plt.xlabel(feature)
         plt.ylabel("Frequency")
@@ -75,7 +76,7 @@ class CategoricalUnivariateAnalysis(UnivariateAnalysisStrategy):
 
 # This class allows you to switch between different univariate analysis strategies.
 class UnivariateAnalyzer:
-    def __init__(self):
+    def __init__(self, strategy: UnivariateAnalysisStrategy):
         """
         Initializes the UnivariateAnalyzer with a specific analysis strategy.
 
