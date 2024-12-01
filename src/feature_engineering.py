@@ -58,3 +58,31 @@ class LogTransformation(FeatureEngineeringStrategy):
             )  # log1p handles log(0) by calculating log(1+x)
         logging.info("Log transformation completed.")
         return df_transformed
+        
+# Concrete Strategy for Standard Scaling
+
+# This strategy applies standard scaling (z-score normalization) to features, centering them around zero with unit variance.
+class StandardScaling(FeatureEngineeringStrategy):
+    def __init__(self, features):
+        """
+        Initializes the StandardScaling with the specific features to scale.
+
+        Parameters:
+        features (list): The list of features to apply the standard scaling to.
+        """
+        self.features = features
+        self.scaler = StandardScaler()
+
+    def apply_transformation(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Applies standard scaling to the specified features in the DataFrame.
+
+        Parameters:
+        df (pd.DataFrame): The dataframe containing features to transform.
+
+        Returns:
+        pd.DataFrame: The dataframe with scaled features.
+        """
+        df_transformed[self.features] = self.scaler.fit_transform(df[self.features])
+        logging.info("Standard scaling completed.")
+        return df_transformed
