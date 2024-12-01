@@ -2,6 +2,7 @@ import logging
 from abc import ABC, abstractmethod
 
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 # Setup logging configuration
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -12,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 # Subclasses must implement the split_data method.
 class DataSplittingStrategy(ABC):
     @abstractmethod
-    def split_data(self, df: pd.DataFrame):
+    def split_data(self, df: pd.DataFrame, target_column: str):
         """
         Abstract method to split the data into training and testing sets.
 
@@ -30,7 +31,7 @@ class DataSplittingStrategy(ABC):
 
 # This strategy implements a simple train-test split.
 class SimpleTrainTestSplitStrategy(DataSplittingStrategy):
-    def __init__(self, test_size=0.2):
+    def __init__(self, test_size=0.2, random_state=42):
         """
         Initializes the SimpleTrainTestSplitStrategy with specific parameters.
 
