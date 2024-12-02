@@ -88,6 +88,9 @@ class FillMissingValuesStrategy(MissingValueHandlingStrategy):
             df_cleaned[numeric_columns] = df_cleaned[numeric_columns].fillna(
                 df[numeric_columns].median()
             )
+        elif self.method == "mode":
+            for column in df_cleaned.columns:
+                df_cleaned[column].fillna(df[column].mode().iloc[0], inplace=True)
         elif self.method == "constant":
             df_cleaned = df_cleaned.fillna(self.fill_value)
         else:
@@ -95,3 +98,38 @@ class FillMissingValuesStrategy(MissingValueHandlingStrategy):
 
         logging.info("Missing values filled.")
         return df_cleaned
+
+
+# Context Class for Handling Missing Values
+class MissingValueHandler:
+    def __init__(self, strategy: MissingValueHandlingStrategy):
+        """
+        Initializes the MissingValueHandler with a specific missing value handling strategy.
+
+        Parameters:
+        strategy (MissingValueHandlingStrategy): The strategy to be used for handling missing values.
+        """
+        self._strategy = strategy
+
+    def set_strategy(self, strategy: MissingValueHandlingStrategy):
+        """
+        Sets a new strategy for the MissingValueHandler.
+
+        Parameters:
+        strategy (MissingValueHandlingStrategy): The new strategy to be used for handling missing values.
+        """
+        logging.info("Switching missing value handling strategy.")
+        self._strategy = strategy
+
+    def handle_missing_values(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Executes the missing value handling using the current strategy.
+
+        Parameters:
+        df (pd.DataFrame): The input DataFrame containing missing values.
+
+        Returns:
+        pd.DataFrame: The DataFrame with missing values handled.
+        """
+        logging.info("Executing missing value handling strategy.")
+        return self._strategy.handle(df)
