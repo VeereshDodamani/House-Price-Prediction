@@ -17,7 +17,7 @@ def ml_pipeline():
     """Define an end-to-end machine learning pipeline."""
 
     raw_data = data_ingestion_step(
-        file_path=""
+        file_path="/Users/veereshrdodamani/Desktop/prices-predictor-system"
     )
 
     filled_data = handle_missing_values_step(raw_data)
