@@ -7,7 +7,7 @@ import pandas as pd
 import seaborn as sns
 
 # Setup logging configuration
-logging.basicConfig(level=logging.INFO, format="%(asctime) - %(levelname) - %(message)")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Abstract Base Class for Outlier Detection Strategy
 class OutlierDetectionStrategy(ABC):
