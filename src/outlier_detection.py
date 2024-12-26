@@ -3,9 +3,11 @@ from abc import ABC, abstractmethod
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import seaborn as sns
 
 # Setup logging configuration
-logging.basicConfig(level=logging.INFO, format="%(asctime) - %(levelname)")
+logging.basicConfig(level=logging.INFO, format="%(asctime) - %(levelname) - %(message)")
 
 # Abstract Base Class for Outlier Detection Strategy
 class OutlierDetectionStrategy(ABC):
@@ -31,6 +33,7 @@ class ZScoreOutlierDetection(OutlierDetectionStrategy):
     def detect_outliers(self, df: pd.DataFrame) -> pd.DataFrame:
         logging.info("Detecting outliers using the Z-score method.")
         z_scores = np.abs((df - df.mean()) / df.std())
+        outliers = z_scores > self.threshold
         logging.info(f"Outliers detected with Z-score threshold: {self.threshold}.")
         return outliers
 
@@ -55,7 +58,3 @@ class OutlierDetector:
     def set_strategy(self, strategy: OutlierDetectionStrategy):
         logging.info("Switching outlier detection strategy.")
         self._strategy = strategy
-
-    def detect_outliers(self, df: pd.DataFrame) -> pd.DataFrame:
-        logging.info("Executing outlier detection strategy.")
-        return self._strategy.detect_outliers(df)
