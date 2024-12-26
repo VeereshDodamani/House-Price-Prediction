@@ -58,3 +58,22 @@ class OutlierDetector:
     def set_strategy(self, strategy: OutlierDetectionStrategy):
         logging.info("Switching outlier detection strategy.")
         self._strategy = strategy
+
+    def detect_outliers(self, df: pd.DataFrame) -> pd.DataFrame:
+        logging.info("Executing outlier detection strategy.")
+        return self._strategy.detect_outliers(df)
+
+    def handle_outliers(self, df: pd.DataFrame, method="remove", **kwargs) -> pd.DataFrame:
+        outliers = self.detect_outliers(df)
+        if method == "remove":
+            logging.info("Removing outliers from the dataset.")
+            df_cleaned = df[(~outliers).all(axis=1)]
+        elif method == "cap":
+            logging.info("Capping outliers in the dataset.")
+            df_cleaned = df.clip(lower=df.quantile(0.01), upper=df.quantile(0.99), axis=1)
+        else:
+            logging.warning(f"Unknown method '{method}'. No outlier handling performed.")
+            return df
+
+        logging.info("Outlier handling completed.")
+        return df_cleaned
