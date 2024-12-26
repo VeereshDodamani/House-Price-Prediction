@@ -77,3 +77,12 @@ class OutlierDetector:
 
         logging.info("Outlier handling completed.")
         return df_cleaned
+
+    def visualize_outliers(self, df: pd.DataFrame, features: list):
+        logging.info(f"Visualizing outliers for features: {features}")
+        for feature in features:
+            plt.figure(figsize=(10, 6))
+            sns.boxplot(x=df[feature])
+            plt.title(f"Boxplot of {feature}")
+            plt.show()
+        logging.info("Outlier visualization completed.")
