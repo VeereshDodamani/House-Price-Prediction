@@ -3,6 +3,8 @@ from src.feature_engineering import (
     FeatureEngineer,
     LogTransformation,
     MinMaxScaling,
+    OneHotEncoding,
+    StandardScaling,
 )
 from zenml import step
 
